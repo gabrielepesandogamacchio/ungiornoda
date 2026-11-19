@@ -25,3 +25,6 @@ GoDaddy → DNS di `ungiornoda.net`:
 
 Poi su GitHub: Settings → Pages → Custom domain `ungiornoda.net` → Enforce HTTPS.
 I record MX/TXT dell'inoltro email non vanno toccati.
+
+## Design
+`design/UGD_sito_v2.vectorcraft`: progetto della versione 2 in VectorCraft (desktop 1440, telefono 390, sistema). Si modifica nell'app; `python3 design/build_v2.py` lo rigenera da zero (sovrascrive le modifiche fatte a mano).
