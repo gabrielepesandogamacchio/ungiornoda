@@ -31,13 +31,15 @@
 
   <header class="testata" data-testata>
     <a class="testata__logo" href="#top" aria-label="Un giorno da, torna all'inizio">
-      <img src="assets/img/logo-orizzontale.svg" alt="" width="292" height="100">
+      <img class="testata__simbolo" src="assets/img/simbolo.svg" alt="" width="55" height="61">
+      <img class="testata__scritta" src="assets/img/scritta-bianca.svg" alt="" width="111" height="20">
     </a>
     <nav class="testata__nav" aria-label="Sezioni">
       <a href="#progetto">Il progetto</a>
+      <a href="#format">Il format</a>
       <a href="#stagione">Prima stagione</a>
       <a href="#team">Team</a>
-      <a href="#contatti" class="testata__scrivi">Scrivici</a>
+      <a href="#scrivici" class="testata__scrivi">Scrivici</a>
     </nav>
   </header>
 
@@ -52,9 +54,9 @@
       <div class="apertura__velo" aria-hidden="true"></div>
 
       <div class="apertura__centro">
-        <h1 class="apertura__titolo">
-          <img class="apertura__simbolo" src="assets/img/simbolo.svg" alt="" width="366" height="400">
-          <img class="apertura__scritta" src="assets/img/scritta-bianca.svg" alt="un giorno da" width="591" height="100">
+        <h1 class="logo">
+          <img class="logo__simbolo" src="assets/img/simbolo.svg" alt="" width="55" height="61">
+          <img class="logo__scritta" src="assets/img/scritta-bianca.svg" alt="un giorno da" width="111" height="20">
         </h1>
         <p class="apertura__motto">
           <span>Una giornata.</span> <span>Un mestiere.</span> <span>Un racconto.</span>
@@ -62,174 +64,256 @@
       </div>
 
       <div class="apertura__piede">
-        <p class="apertura__intro">La docuserie sul lavoro in Valle d'Aosta. Prima stagione da dicembre&nbsp;2026.</p>
-        <a class="bottone" href="#sigla" data-apri-sigla>
-          <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path d="M7 4.5v15l12.5-7.5z" fill="currentColor"/></svg>
-          Guarda la sigla
-        </a>
-      </div>
-
-      <button class="apertura__pausa" type="button" data-pausa aria-pressed="false">
-        <svg class="icona-pausa" aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M6.5 4h4v16h-4zM13.5 4h4v16h-4z" fill="currentColor"/></svg>
-        <svg class="icona-play" aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M7 4.5v15l12.5-7.5z" fill="currentColor"/></svg>
-        <span class="vh" data-pausa-testo>Metti in pausa il video</span>
-      </button>
-    </section>
-
-    <!-- IL PROGETTO -->
-    <section class="progetto" id="progetto" aria-labelledby="progetto-titolo">
-      <div class="progetto__testa">
-        <h2 id="progetto-titolo" class="titolo">Il lavoro vero, un mestiere alla volta.</h2>
-        <p class="progetto__lead">
-          <em>Un giorno da…</em> è una docuserie girata in Valle d'Aosta. In ogni episodio Carlo passa una giornata
-          intera dentro un mestiere: arriva quando si comincia, prova a fare quello che fanno gli altri e resta fino
-          a fine turno. Quello che vedi è com'è davvero quel lavoro, senza filtri.
+        <div class="apertura__sinistra">
+          <p class="apertura__intro">La docuserie sul lavoro in Valle d'Aosta.<span class="solo-telefono"> Prima stagione da dicembre&nbsp;2026.</span></p>
+          <a class="bottone bottone--pieno" href="#sigla" data-apri-sigla>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7 4.5v15l12.5-7.5z" fill="currentColor"/></svg>
+            Guarda la sigla
+          </a>
+        </div>
+        <p class="apertura__quando">
+          <span>Prima stagione</span>
+          <strong>da dicembre 2026</strong>
         </p>
+        <button class="apertura__pausa" type="button" data-pausa aria-pressed="false">
+          <svg class="icona-pausa" aria-hidden="true" viewBox="0 0 24 24"><path d="M6.5 4h4v16h-4zM13.5 4h4v16h-4z" fill="currentColor"/></svg>
+          <svg class="icona-play" aria-hidden="true" viewBox="0 0 24 24"><path d="M7 4.5v15l12.5-7.5z" fill="currentColor"/></svg>
+          <span class="vh" data-pausa-testo>Metti in pausa il video</span>
+        </button>
       </div>
+    </section>
 
-      <ol class="tre">
-        <li class="tre__voce">
-          <h3>Una giornata.</h3>
-          <p>Dalla mattina alla sera, raccontata in un episodio di 40–45 minuti.</p>
-        </li>
-        <li class="tre__voce">
-          <h3>Un mestiere.</h3>
-          <p>Uno per episodio, in un'azienda o una realtà della Valle. Carlo non si limita a fare domande: ci mette le mani.</p>
-        </li>
-        <li class="tre__voce">
-          <h3>Un racconto.</h3>
-          <p>Quello di chi quel lavoro lo fa ogni giorno: come ci è arrivato, cosa lo tiene lì, cosa direbbe a chi deve ancora scegliere.</p>
-        </li>
-      </ol>
+    <!-- 07:00 IL PROGETTO -->
+    <section class="sezione sezione--carta" id="progetto" aria-labelledby="progetto-titolo">
+      <div class="contenitore">
+        <p class="orario" aria-hidden="true">07:00</p>
+        <h2 id="progetto-titolo" class="titolo progetto__titolo">Che lavoro voglio fare, davvero?</h2>
 
-      <div class="progetto__sigla">
-        <div class="sigla" id="sigla">
-          <button class="sigla__play" type="button" data-sigla data-src="assets/video/sigla-1080.mp4" aria-label="Guarda la sigla di Un giorno da (44 secondi, con audio)">
-            <img src="assets/img/sigla-thumb.webp" alt="" width="1280" height="720" loading="lazy">
-            <span class="sigla__tasto" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="28" height="28"><path d="M7 4.5v15l12.5-7.5z" fill="currentColor"/></svg>
-            </span>
-          </button>
+        <div class="progetto__corpo">
+          <aside class="progetto__nota">
+            <p class="progetto__dato">In Valle d'Aosta il 10,3% dei ragazzi tra 15 e 29 anni non studia e non lavora. In Italia è il 15,2%.</p>
+            <p class="progetto__fonte"><span class="solo-largo">Fonte: Istat, <cite>Il benessere equo e sostenibile dei territori, Valle d'Aosta</cite>, dicembre 2025 (dati 2024).</span><span class="solo-telefono">Fonte: Istat, <cite>BES dei territori, Valle d'Aosta</cite>, dic. 2025 (dati 2024).</span></p>
+          </aside>
+          <div class="progetto__testo">
+            <p><span class="solo-largo">È la domanda che quasi tutti, prima o poi, si fanno: dopo la scuola, durante gli studi, nei primi anni di lavoro. Spesso non manca la voglia. Manca l'occasione di vedere un mestiere da vicino e di parlarne con chi lo fa ogni giorno.</span><span class="solo-telefono">È la domanda che quasi tutti, prima o poi, si fanno. Spesso non manca la voglia: manca l'occasione di vedere un mestiere da vicino.</span></p>
+            <p><span class="solo-largo">Un giorno da… è una docuserie girata in Valle d'Aosta. In ogni episodio Carlo passa una giornata intera dentro un mestiere: arriva quando si comincia, prova a fare quello che fanno gli altri e resta fino a fine turno.</span><span class="solo-telefono">Un giorno da… è una docuserie girata in Valle d'Aosta. In ogni episodio Carlo passa una giornata intera dentro un mestiere, dalla prima ora all'ultima.</span></p>
+          </div>
         </div>
-        <div class="progetto__per-chi">
-          <p class="progetto__didascalia">La sigla, 44 secondi.</p>
-          <p>
-            La serie è pensata per chi ha tra i 15 e i 29 anni e sta ancora capendo che lavoro fare. E per chiunque
-            si sia chiesto almeno una volta com'è, davvero, quel lavoro lì.
-          </p>
+
+        <h3 class="sottotitolo scheda__titolo">La serie in breve</h3>
+        <dl class="scheda">
+          <div><dt>Formato</dt><dd>Docuserie per YouTube e i social</dd></div>
+          <div><dt>Episodi</dt><dd>Cinque, da circa 40 minuti</dd></div>
+          <div><dt>Girata in</dt><dd>Valle d'Aosta</dd></div>
+          <div><dt>Per chi</dt><dd>Chi ha tra 15 e 29 anni e sta scegliendo che lavoro fare</dd></div>
+          <div><dt>Tono</dt><dd>Diretto e reale. Niente attori, niente finzione</dd></div>
+          <div><dt>Prima stagione</dt><dd>Da dicembre 2026 ad agosto 2027</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- 09:30 IL FORMAT -->
+    <section class="sezione sezione--nera" id="format" aria-labelledby="format-titolo">
+      <div class="contenitore">
+        <p class="orario" aria-hidden="true">09:30</p>
+        <h2 id="format-titolo" class="titolo format__titolo">Dentro il mestiere. Senza filtri.</h2>
+
+        <div class="format__corpo">
+          <figure class="format__sigla">
+            <div class="sigla" id="sigla">
+              <button class="sigla__play" type="button" data-sigla data-src="assets/video/sigla-1080.mp4" aria-label="Guarda la sigla di Un giorno da (44 secondi, con audio)">
+                <img src="assets/img/sigla-poster.webp" alt="" width="1600" height="900" loading="lazy">
+                <span class="sigla__tasto" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M7 4.5v15l12.5-7.5z" fill="currentColor"/></svg>
+                </span>
+              </button>
+            </div>
+            <figcaption class="didascalia">La sigla, 44 secondi. Con l'audio.</figcaption>
+          </figure>
+
+          <ul class="pilastri">
+            <li>
+              <h3>Il lato professionale</h3>
+              <p>Come funziona il mestiere nella pratica: gli strumenti, le competenze, una giornata tipo.</p>
+            </li>
+            <li>
+              <h3>Il lato umano</h3>
+              <p>Il percorso dietro ogni scelta: dubbi, cambiamenti, sacrifici, e cosa ti fa sentire nel posto giusto.</p>
+            </li>
+            <li>
+              <h3>Niente finzione</h3>
+              <p>Ritmo veloce, riprese immersive, qualità da documentario. Niente attori e nessun copione da recitare.</p>
+            </li>
+          </ul>
         </div>
+
+        <figure class="fotogrammi">
+          <div class="fotogrammi__fila">
+            <img src="assets/img/fotogramma-7.2.webp" alt="" width="600" height="750" loading="lazy">
+            <img src="assets/img/fotogramma-10.5.webp" alt="" width="600" height="750" loading="lazy">
+            <img src="assets/img/fotogramma-20.0.webp" alt="" width="600" height="750" loading="lazy">
+            <img src="assets/img/fotogramma-23.6.webp" alt="" width="600" height="750" loading="lazy">
+            <img src="assets/img/fotogramma-37.2.webp" alt="" width="600" height="750" loading="lazy">
+          </div>
+          <figcaption class="didascalia">Fotogrammi dalla sigla.</figcaption>
+        </figure>
       </div>
     </section>
 
-    <!-- PRIMA STAGIONE -->
-    <section class="stagione" id="stagione" aria-labelledby="stagione-titolo">
-      <div class="stagione__testa">
-        <h2 id="stagione-titolo" class="titolo">Prima stagione</h2>
-        <p>Cinque episodi, uno ogni due mesi. I mestieri restano segreti fino all'uscita: per ora possiamo dirvi solo quando.</p>
+    <!-- 12:00 COME NASCE UN EPISODIO -->
+    <section class="sezione sezione--carta" id="episodio" aria-labelledby="episodio-titolo">
+      <div class="contenitore">
+        <p class="orario" aria-hidden="true">12:00</p>
+        <div class="testa">
+          <h2 id="episodio-titolo" class="titolo testa__titolo">Come nasce un episodio</h2>
+          <p class="testa__lead">Per ogni episodio servono tre cose: una realtà che apre le porte, un mestiere da raccontare e chi lo fa ogni giorno.</p>
+        </div>
+        <ol class="passi">
+          <li><span class="passi__n">01</span><h3>Incontro</h3><p>Con la realtà che ci apre le porte scegliamo mestieri, persone e luoghi.</p></li>
+          <li><span class="passi__n">02</span><h3>Scrittura</h3><p>Copione e scaletta: le tappe della giornata e cosa mettere in risalto.</p></li>
+          <li><span class="passi__n">03</span><h3>Riprese</h3><p>Più giornate di riprese per raccontare una sola giornata sullo schermo.</p></li>
+          <li><span class="passi__n">04</span><h3>Montaggio</h3><p>Circa 40 minuti di episodio, più le clip brevi per i social.</p></li>
+          <li><span class="passi__n">05</span><h3>Uscita</h3><p>L'episodio su YouTube, teaser e clip sui social, incontri nelle scuole.</p></li>
+        </ol>
       </div>
-
-      <ol class="calendario" data-calendario>
-        <li class="puntata" data-mese="2026-12">
-          <p class="puntata__quando"><span class="puntata__mese">Dicembre</span> <span class="puntata__anno">2026</span></p>
-          <div class="puntata__card">
-            <p class="etichetta">Episodio 01</p>
-            <img class="puntata__scritta" src="assets/img/scritta-bianca.svg" alt="un giorno da" width="591" height="100">
-            <button class="segreto" type="button" data-segreto="dicembre">
-              <span class="vh">Mestiere segreto. Si scopre a dicembre 2026.</span>
-            </button>
-          </div>
-        </li>
-        <li class="puntata" data-mese="2027-02">
-          <p class="puntata__quando"><span class="puntata__mese">Febbraio</span> <span class="puntata__anno">2027</span></p>
-          <div class="puntata__card">
-            <p class="etichetta">Episodio 02</p>
-            <img class="puntata__scritta" src="assets/img/scritta-bianca.svg" alt="un giorno da" width="591" height="100">
-            <button class="segreto" type="button" data-segreto="febbraio">
-              <span class="vh">Mestiere segreto. Si scopre a febbraio 2027.</span>
-            </button>
-          </div>
-        </li>
-        <li class="puntata" data-mese="2027-04">
-          <p class="puntata__quando"><span class="puntata__mese">Aprile</span> <span class="puntata__anno">2027</span></p>
-          <div class="puntata__card">
-            <p class="etichetta">Episodio 03</p>
-            <img class="puntata__scritta" src="assets/img/scritta-bianca.svg" alt="un giorno da" width="591" height="100">
-            <button class="segreto" type="button" data-segreto="aprile">
-              <span class="vh">Mestiere segreto. Si scopre ad aprile 2027.</span>
-            </button>
-          </div>
-        </li>
-        <li class="puntata" data-mese="2027-06">
-          <p class="puntata__quando"><span class="puntata__mese">Giugno</span> <span class="puntata__anno">2027</span></p>
-          <div class="puntata__card">
-            <p class="etichetta">Episodio 04</p>
-            <img class="puntata__scritta" src="assets/img/scritta-bianca.svg" alt="un giorno da" width="591" height="100">
-            <button class="segreto" type="button" data-segreto="giugno">
-              <span class="vh">Mestiere segreto. Si scopre a giugno 2027.</span>
-            </button>
-          </div>
-        </li>
-        <li class="puntata" data-mese="2027-08">
-          <p class="puntata__quando"><span class="puntata__mese">Agosto</span> <span class="puntata__anno">2027</span></p>
-          <div class="puntata__card">
-            <p class="etichetta">Episodio 05</p>
-            <img class="puntata__scritta" src="assets/img/scritta-bianca.svg" alt="un giorno da" width="591" height="100">
-            <button class="segreto" type="button" data-segreto="agosto">
-              <span class="vh">Mestiere segreto. Si scopre ad agosto 2027.</span>
-            </button>
-          </div>
-        </li>
-      </ol>
-      <p class="stagione__nota" aria-live="polite" data-nota>Tocca un mestiere per provare a sbirciare.</p>
     </section>
 
-    <!-- TEAM -->
-    <section class="team" id="team" aria-labelledby="team-titolo">
-      <div class="team__testa">
-        <h2 id="team-titolo" class="titolo">Chi la fa</h2>
-        <p>Siamo in tre. Carlo va sul posto e ci mette la faccia, Riccardo riprende e monta, Gabriele scrive gli episodi e segue la parte tecnica.</p>
+    <!-- 14:30 PRIMA STAGIONE -->
+    <section class="sezione sezione--nera" id="stagione" aria-labelledby="stagione-titolo">
+      <div class="contenitore">
+        <p class="orario" aria-hidden="true">14:30</p>
+        <div class="testa">
+          <h2 id="stagione-titolo" class="titolo testa__titolo">Prima stagione</h2>
+          <p class="testa__lead testa__lead--chiaro">Cinque episodi, uno ogni due mesi. I mestieri restano segreti fino all'uscita: per ora possiamo dirvi solo quando.</p>
+        </div>
+
+        <div class="calendario">
+          <div class="calendario__linea" aria-hidden="true">
+            <span style="--i:1">gen</span><span style="--i:3">mar</span><span style="--i:5">mag</span><span style="--i:7">lug</span>
+          </div>
+          <ol class="calendario__episodi">
+            <li class="puntata" data-mese="2026-12">
+              <p class="puntata__anno">2026</p>
+              <p class="puntata__mese">Dicembre</p>
+              <p class="puntata__numero">Episodio 1</p>
+              <img class="puntata__scritta" src="assets/img/scritta-bianca.svg" alt="un giorno da" width="111" height="20">
+              <button class="segreto" type="button" data-segreto="dicembre"><span class="vh">Mestiere segreto. Si scopre a dicembre 2026.</span></button>
+            </li>
+            <li class="puntata" data-mese="2027-02">
+              <p class="puntata__anno">2027</p>
+              <p class="puntata__mese">Febbraio</p>
+              <p class="puntata__numero">Episodio 2</p>
+              <img class="puntata__scritta" src="assets/img/scritta-bianca.svg" alt="un giorno da" width="111" height="20">
+              <button class="segreto" type="button" data-segreto="febbraio"><span class="vh">Mestiere segreto. Si scopre a febbraio 2027.</span></button>
+            </li>
+            <li class="puntata" data-mese="2027-04">
+              <p class="puntata__anno">2027</p>
+              <p class="puntata__mese">Aprile</p>
+              <p class="puntata__numero">Episodio 3</p>
+              <img class="puntata__scritta" src="assets/img/scritta-bianca.svg" alt="un giorno da" width="111" height="20">
+              <button class="segreto" type="button" data-segreto="aprile"><span class="vh">Mestiere segreto. Si scopre ad aprile 2027.</span></button>
+            </li>
+            <li class="puntata" data-mese="2027-06">
+              <p class="puntata__anno">2027</p>
+              <p class="puntata__mese">Giugno</p>
+              <p class="puntata__numero">Episodio 4</p>
+              <img class="puntata__scritta" src="assets/img/scritta-bianca.svg" alt="un giorno da" width="111" height="20">
+              <button class="segreto" type="button" data-segreto="giugno"><span class="vh">Mestiere segreto. Si scopre a giugno 2027.</span></button>
+            </li>
+            <li class="puntata" data-mese="2027-08">
+              <p class="puntata__anno">2027</p>
+              <p class="puntata__mese">Agosto</p>
+              <p class="puntata__numero">Episodio 5</p>
+              <img class="puntata__scritta" src="assets/img/scritta-bianca.svg" alt="un giorno da" width="111" height="20">
+              <button class="segreto" type="button" data-segreto="agosto"><span class="vh">Mestiere segreto. Si scopre ad agosto 2027.</span></button>
+            </li>
+          </ol>
+          <p class="calendario__nota" aria-live="polite" data-nota>Tocca un mestiere per provare a sbirciare.</p>
+        </div>
+
+        <h3 class="sottotitolo sottotitolo--grande oltre__titolo">Oltre agli episodi</h3>
+        <ul class="colonne colonne--3 oltre">
+          <li><h4>Sui social</h4><p>Teaser prima di ogni uscita, clip brevi dagli episodi e rubriche pensate per il telefono.</p></li>
+          <li><h4>Nelle scuole</h4><p>Incontri nelle ore di orientamento delle superiori, da dicembre a maggio.</p></li>
+          <li><h4>Dal vivo</h4><p>Una serata di lancio con la prima visione, a dicembre, e una serata finale a fine stagione.</p></li>
+        </ul>
       </div>
-      <ul class="persone">
-        <li class="persona">
-          <img src="assets/img/team-riccardo.webp" alt="Riccardo Fiou" width="600" height="600" loading="lazy">
-          <h3>Riccardo Fiou</h3>
-          <p>Videomaker e produttore</p>
-        </li>
-        <li class="persona">
-          <img src="assets/img/team-carlo.webp" alt="Carlo Giordano" width="600" height="600" loading="lazy">
-          <h3>Carlo Giordano</h3>
-          <p>Conduttore e protagonista della serie</p>
-        </li>
-        <li class="persona">
-          <img src="assets/img/team-gabriele.webp" alt="Gabriele Pesando" width="600" height="600" loading="lazy">
-          <h3>Gabriele Pesando</h3>
-          <p>Autore e parte tecnica</p>
-        </li>
-      </ul>
     </section>
 
-    <!-- CONTATTI -->
-    <section class="contatti" id="contatti" aria-labelledby="contatti-titolo">
-      <h2 id="contatti-titolo" class="contatti__titolo">Scrivici.</h2>
-      <ul class="contatti__chi">
-        <li>Hai un'azienda e vuoi aprirci le porte per un episodio.</li>
-        <li>Insegni e vuoi portare la serie in classe.</li>
-        <li>Scrivi per un giornale, una radio, un sito.</li>
-        <li>C'è un mestiere che vorresti vedere.</li>
-      </ul>
-      <p class="contatti__mail">
-        <a href="mailto:team@ungiornoda.net">team<wbr>@ungiornoda.net</a>
-      </p>
-      <button class="contatti__copia" type="button" data-copia="team@ungiornoda.net">
-        <span data-copia-testo>Copia l'indirizzo</span>
-      </button>
+    <!-- 17:00 TEAM -->
+    <section class="sezione sezione--carta" id="team" aria-labelledby="team-titolo">
+      <div class="contenitore">
+        <p class="orario" aria-hidden="true">17:00</p>
+        <h2 id="team-titolo" class="titolo">I fondatori</h2>
+        <ul class="persone">
+          <li class="persona">
+            <img src="assets/img/team-riccardo.webp" alt="Riccardo Fiou" width="600" height="600" loading="lazy">
+            <h3>Riccardo Fiou</h3>
+            <p class="persona__ruolo">Videomaker e produttore</p>
+            <p class="persona__bio"><span class="solo-largo">Videomaker freelance, laureato in Ingegneria del Cinema al Politecnico di Torino. Ha lavorato con Golden Goose, Adidas, AW LAB e con la Regione per «Aosta capitale della cultura».</span><span class="solo-telefono">Videomaker freelance, Ingegneria del Cinema al Politecnico di Torino.</span></p>
+          </li>
+          <li class="persona">
+            <img src="assets/img/team-carlo.webp" alt="Carlo Giordano" width="600" height="600" loading="lazy">
+            <h3>Carlo Giordano</h3>
+            <p class="persona__ruolo"><span class="solo-largo">Conduttore e protagonista della serie</span><span class="solo-telefono">Conduttore e protagonista</span></p>
+            <p class="persona__bio"><span class="solo-largo">Entra nei mestieri, li vive e li racconta in prima persona. Libero professionista nelle politiche giovanili: progettazione e mobilità internazionale con Erasmus+.</span><span class="solo-telefono">Entra nei mestieri, li vive e li racconta in prima persona.</span></p>
+          </li>
+          <li class="persona">
+            <img src="assets/img/team-gabriele.webp" alt="Gabriele Pesando" width="600" height="600" loading="lazy">
+            <h3>Gabriele Pesando</h3>
+            <p class="persona__ruolo">Autore e parte tecnica</p>
+            <p class="persona__bio"><span class="solo-largo">Ricercatore, laurea magistrale in Intelligenza Artificiale alla Statale di Milano. Consulente in progetti di ricerca applicata e sviluppo software.</span><span class="solo-telefono">Ricercatore, laurea magistrale in Intelligenza Artificiale.</span></p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 19:00 SCRIVICI -->
+    <section class="sezione sezione--arancio" id="scrivici" aria-labelledby="scrivici-titolo">
+      <div class="contenitore">
+        <p class="orario" aria-hidden="true">19:00</p>
+        <h2 id="scrivici-titolo" class="scrivici__titolo">Scrivici.</h2>
+        <ul class="colonne colonne--4 motivi">
+          <li><h3>Aziende e realtà del territorio</h3><p><span class="solo-largo">Apriteci le porte per una giornata: scegliamo insieme mestieri, persone e luoghi.</span><span class="solo-telefono">Apriteci le porte per una giornata.</span></p></li>
+          <li><h3>Scuole</h3><p><span class="solo-largo">Portiamo la serie in classe, nelle ore di orientamento.</span><span class="solo-telefono">Portiamo la serie in classe.</span></p></li>
+          <li><h3>Stampa, radio e tv</h3><p><span class="solo-largo">Interviste, materiali e anteprime degli episodi.</span><span class="solo-telefono">Interviste, materiali e anteprime.</span></p></li>
+          <li><h3>Un'idea</h3><p><span class="solo-largo">C'è un mestiere che vorresti vedere raccontato? Diccelo.</span><span class="solo-telefono">C'è un mestiere che vorresti vedere? Diccelo.</span></p></li>
+        </ul>
+        <p class="scrivici__mail"><a href="mailto:team@ungiornoda.net">team<wbr>@ungiornoda.net</a></p>
+        <button class="bottone bottone--bordo" type="button" data-copia="team@ungiornoda.net">
+          <span data-copia-testo>Copia l'indirizzo</span>
+        </button>
+      </div>
     </section>
   </main>
 
-  <footer class="piede">
-    <img src="assets/img/logo-orizzontale.svg" alt="Un giorno da" width="292" height="100" loading="lazy">
-    <p>Una docuserie girata in Valle d'Aosta.</p>
-    <p>© 2026 Un giorno da</p>
+  <!-- 21:00 PIEDE -->
+  <footer class="sezione piede">
+    <div class="contenitore">
+      <p class="orario" aria-hidden="true">21:00</p>
+      <div class="piede__alto">
+        <a class="logo logo--piede" href="#top" aria-label="Un giorno da, torna all'inizio">
+          <img class="logo__simbolo" src="assets/img/simbolo.svg" alt="" width="55" height="61" loading="lazy">
+          <img class="logo__scritta" src="assets/img/scritta-bianca.svg" alt="" width="111" height="20" loading="lazy">
+        </a>
+        <div class="piede__col">
+          <h2>Seguici</h2>
+          <p>YouTube, Instagram e TikTok:<br>i link arrivano a breve.</p>
+        </div>
+        <div class="piede__col">
+          <h2>Contatti</h2>
+          <p><a href="mailto:team@ungiornoda.net">team@ungiornoda.net</a></p>
+        </div>
+        <div class="piede__col">
+          <h2>Dove</h2>
+          <p>Girata in Valle d'Aosta.</p>
+        </div>
+      </div>
+      <div class="piede__basso">
+        <p>© 2026 Un giorno da</p>
+        <p>Logo di Paola Feder</p>
+      </div>
+    </div>
   </footer>
 
   <script src="assets/js/main.js" defer></script>

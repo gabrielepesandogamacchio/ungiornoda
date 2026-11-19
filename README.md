@@ -27,4 +27,6 @@ Poi su GitHub: Settings → Pages → Custom domain `ungiornoda.net` → Enforce
 I record MX/TXT dell'inoltro email non vanno toccati.
 
 ## Design
-`design/UGD_sito_v2.vectorcraft`: progetto della versione 2 in VectorCraft (desktop 1440, telefono 390, sistema). Si modifica nell'app; `python3 design/build_v2.py` lo rigenera da zero (sovrascrive le modifiche fatte a mano).
+- `design/UGD_sito_v3.vectorcraft`: **il progetto di riferimento** (desktop 1440, telefono 390, sistema). Il sito ricalca questo file. È la v2 con le modifiche di Gabriele (logo orizzontale piccolo nell'apertura, "I fondatori") e il logo originale di Paola al posto di quello rifinito (`design/swap_logo_v3.py`).
+- `design/UGD_sito_v2.vectorcraft`: versione precedente, logo rifinito. `design/build_v2.py` la rigenera da zero (sovrascrive le modifiche a mano: non usarlo sulla v3).
+- Logo del sito: SVG originali in `tools/logo_originale/`, `python3 tools/make_logo.py` li copia in `docs/assets/img/`.

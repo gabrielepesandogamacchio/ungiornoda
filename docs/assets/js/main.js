@@ -1,17 +1,32 @@
 // Un giorno da… — comportamento del sito (nessuna libreria)
 (() => {
   const ridotto = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const hasIO = "IntersectionObserver" in window;
 
-  // Testata: diventa piena quando si esce dall'apertura
+  // Testata: diventa piena (con il logo) quando si esce dall'apertura
   const testata = document.querySelector("[data-testata]");
   const apertura = document.querySelector(".apertura");
-  if (testata && apertura && "IntersectionObserver" in window) {
+  if (testata && apertura && hasIO) {
     new IntersectionObserver(([e]) => {
       testata.classList.toggle("is-solida", !e.isIntersecting);
-    }, { rootMargin: "-80px 0px 0px 0px" }).observe(apertura);
+    }, { rootMargin: "-90px 0px 0px 0px" }).observe(apertura);
   }
 
-  // Video di apertura: pausa / riprendi, fermo se l'utente ha chiesto meno movimento
+  // Voce di menu della sezione che si sta leggendo
+  const voci = [...document.querySelectorAll(".testata__nav a:not(.testata__scrivi)")];
+  if (hasIO && voci.length) {
+    const perId = new Map(voci.map((a) => [a.getAttribute("href").slice(1), a]));
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        voci.forEach((v) => v.removeAttribute("aria-current"));
+        perId.get(e.target.id)?.setAttribute("aria-current", "true");
+      });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    perId.forEach((_, id) => { const el = document.getElementById(id); if (el) obs.observe(el); });
+  }
+
+  // Video di apertura: pausa / riprendi; fermo se l'utente chiede meno movimento
   const video = document.querySelector("[data-video]");
   const pausa = document.querySelector("[data-pausa]");
   const pausaTesto = document.querySelector("[data-pausa-testo]");
@@ -21,17 +36,12 @@
     pausaTesto.textContent = inPausa ? "Riprendi il video" : "Metti in pausa il video";
   };
   if (video) {
-    if (ridotto) {
-      video.removeAttribute("autoplay");
-      video.pause();
-      segnaPausa(true);
-    }
+    if (ridotto) { video.removeAttribute("autoplay"); video.pause(); segnaPausa(true); }
     pausa?.addEventListener("click", () => {
       if (video.paused) { video.play(); segnaPausa(false); }
       else { video.pause(); segnaPausa(true); }
     });
-    // non consumare batteria quando il video non si vede
-    if ("IntersectionObserver" in window) {
+    if (hasIO) {
       new IntersectionObserver(([e]) => {
         if (pausa?.getAttribute("aria-pressed") === "true") return;
         if (e.isIntersecting) video.play().catch(() => {});
@@ -51,7 +61,6 @@
     v.playsInline = true;
     v.setAttribute("aria-label", "Sigla di Un giorno da");
     btn.replaceWith(v);
-    // il video di sfondo si ferma mentre si guarda la sigla
     if (video && !video.paused) { video.pause(); segnaPausa(true); }
     v.play().catch(() => {});
     v.focus();
@@ -60,25 +69,22 @@
   document.querySelector("[data-apri-sigla]")?.addEventListener("click", (ev) => {
     ev.preventDefault();
     document.getElementById("sigla")?.scrollIntoView({ behavior: ridotto ? "auto" : "smooth", block: "center" });
-    setTimeout(apriSigla, ridotto ? 0 : 650);
+    setTimeout(apriSigla, ridotto ? 0 : 700);
   });
 
   // Prima stagione: segna il prossimo episodio in base alla data di oggi
-  const puntate = [...document.querySelectorAll("[data-mese]")];
-  const oggi = new Date();
-  const meseOggi = oggi.getFullYear() * 12 + oggi.getMonth();
-  const prossima = puntate.find((p) => {
+  const meseOggi = new Date().getFullYear() * 12 + new Date().getMonth();
+  [...document.querySelectorAll("[data-mese]")].find((p) => {
     const [a, m] = p.dataset.mese.split("-").map(Number);
     return a * 12 + (m - 1) >= meseOggi;
-  });
-  prossima?.classList.add("is-prossima");
+  })?.classList.add("is-prossima");
 
   // Prima stagione: niente spoiler
   const nota = document.querySelector("[data-nota]");
   const battute = [
-    (m) => `Niente spoiler. Si scopre a ${m}.`,
-    (m) => `Ancora segreto. Appuntamento a ${m}.`,
-    (m) => `Ci hai provato. Lo vedi a ${m}.`,
+    (m) => `Niente spoiler. Si scopre ${m}.`,
+    (m) => `Ancora segreto. Appuntamento ${m}.`,
+    (m) => `Ci hai provato. Lo vedi ${m}.`,
   ];
   let giro = 0;
   document.querySelectorAll("[data-segreto]").forEach((b) => {
@@ -87,16 +93,16 @@
       void b.offsetWidth; // riavvia l'animazione
       b.classList.add("is-scossa");
       const mese = b.dataset.segreto;
-      const frase = battute[giro++ % battute.length](mese);
+      const quando = (/^[aeiou]/.test(mese) ? "ad " : "a ") + mese;
       if (nota) {
-        nota.textContent = frase.replace(" a a", " ad a");
+        nota.textContent = battute[giro++ % battute.length](quando);
         nota.classList.add("is-attiva");
       }
     });
     b.addEventListener("animationend", () => b.classList.remove("is-scossa"));
   });
 
-  // Contatti: copia l'indirizzo
+  // Scrivici: copia l'indirizzo
   const copia = document.querySelector("[data-copia]");
   const copiaTesto = document.querySelector("[data-copia-testo]");
   copia?.addEventListener("click", async () => {
