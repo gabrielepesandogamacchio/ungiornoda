@@ -23,6 +23,66 @@
   <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://ungiornoda.net/#sito",
+        "url": "https://ungiornoda.net/",
+        "name": "Un giorno da…",
+        "alternateName": ["Un giorno da", "ungiornoda"],
+        "inLanguage": "it-IT",
+        "publisher": { "@id": "https://ungiornoda.net/#team" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://ungiornoda.net/#team",
+        "name": "Un giorno da…",
+        "alternateName": "Un giorno da",
+        "url": "https://ungiornoda.net/",
+        "email": "team@ungiornoda.net",
+        "logo": "https://ungiornoda.net/assets/img/apple-touch-icon.png",
+        "sameAs": ["https://www.youtube.com/@Ungiornoda"],
+        "founder": [
+          { "@type": "Person", "name": "Riccardo Fiou" },
+          { "@type": "Person", "name": "Carlo Giordano" },
+          { "@type": "Person", "name": "Gabriele Pesando" }
+        ]
+      },
+      {
+        "@type": "TVSeries",
+        "@id": "https://ungiornoda.net/#serie",
+        "name": "Un giorno da…",
+        "alternateName": "Un giorno da",
+        "url": "https://ungiornoda.net/",
+        "description": "Docuserie girata in Valle d'Aosta: in ogni episodio Carlo passa una giornata intera dentro un mestiere.",
+        "genre": "Documentario",
+        "inLanguage": "it",
+        "countryOfOrigin": { "@type": "Country", "name": "Italia" },
+        "contentLocation": { "@type": "Place", "name": "Valle d'Aosta" },
+        "numberOfSeasons": 1,
+        "numberOfEpisodes": 5,
+        "startDate": "2026-12",
+        "image": "https://ungiornoda.net/assets/img/og.jpg",
+        "actor": { "@type": "Person", "name": "Carlo Giordano" },
+        "trailer": {
+          "@type": "VideoObject",
+          "name": "Sigla di Un giorno da…",
+          "description": "La sigla della docuserie Un giorno da…",
+          "thumbnailUrl": "https://ungiornoda.net/assets/img/og.jpg",
+          "contentUrl": "https://ungiornoda.net/assets/video/sigla-1080.mp4",
+          "embedUrl": "https://www.youtube.com/embed/MVeWe8grijE",
+          "uploadDate": "2026-11-04T04:21:30-08:00",
+          "duration": "PT44S"
+        },
+        "productionCompany": { "@id": "https://ungiornoda.net/#team" }
+      }
+    ]
+  }
+  </script>
+
   <link rel="preload" href="assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
